@@ -1,0 +1,19 @@
+from graphviz import Digraph
+
+def visualize_heap(heap):
+    dot = Digraph()
+    for i, value in enumerate(heap.heap):
+        dot.node(str(i), str(value))
+        parent = heap.get_parent(i)
+        if parent is not None:
+            dot.edge(str(parent), str(i))
+    return dot
+
+heap = MinPriorityQueue()
+
+# Insert elements into heap
+for i in range(10):
+    heap.insert(i)
+
+# Visualize heap
+visualize_heap(heap)
