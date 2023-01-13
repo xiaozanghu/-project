@@ -1,0 +1,8 @@
+import matplotlib.pyplot as plt
+x = [i for i in range(10000)]
+y = [insert_time, delete_time]
+plt.plot(x, y)
+plt.xlabel('Number of operations')
+plt.ylabel('Time (seconds)')
+plt.title('Performance of linked list based heap')
+plt.show()
