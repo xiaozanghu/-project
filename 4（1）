@@ -1,0 +1,16 @@
+import time
+heap = MinPriorityQueue()
+# Insert benchmark
+start_time = time.time()
+for i in range(10000):
+    heap.insert(i)
+end_time = time.time()
+insert_time = end_time - start_time
+print("Insert time:", insert_time)
+# Delete benchmark
+start_time = time.time()
+for i in range(10000):
+    heap.delMin()
+end_time = time.time()
+delete_time = end_time - start_time
+print("Delete time:", delete_time)
