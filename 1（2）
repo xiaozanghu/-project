@@ -1,26 +1,24 @@
-   def get_parent(self, i):
-        if i <= 0 or i >= self.size:
-            return None
-        if i % 2 == 0:
-            return self.list[(i - 2) // 2]
-        else:
-            return self.list[(i - 1) // 2]
+  class CompleteBinaryTree:
+    def __init__(self):
+        self.data = []
 
-    def get_left_child(self, i):
-        if i < 0 or i >= self.size:
+    def parent(self, i):
+        if i == 0:
             return None
-        left_child_index = 2 * i + 1
-        if left_child_index >= self.size:
-            return None
-        return self.list[left_child_index]
+        return (i-1) // 2
 
-    def get_right_child(self, i):
-        if i < 0 or i >= self.size:
+    def left_child(self, i):
+        left = 2 * i + 1
+        if left >= len(self.data):
             return None
-        right_child_index = 2 * i + 2
-        if right_child_index >= self.size:
+        return left
+    
+    def right_child(self, i):
+        right = 2 * i + 2
+        if right >= len(self.data):
             return None
-        return self.list[right_child_index]
+        return right
+
         
         
         parent = (i-1) // 2, left child = 2 * i + 1, right child = 2 * i + 2
